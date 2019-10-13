@@ -1,0 +1,7 @@
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\bin\Debug\GiveMeSomeStats.exe.config
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\bin\Debug\GiveMeSomeStats.exe
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\bin\Debug\GiveMeSomeStats.pdb
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\obj\Debug\GiveMeSomeStats.csprojAssemblyReference.cache
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\obj\Debug\GiveMeSomeStats.csproj.CoreCompileInputs.cache
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\obj\Debug\GiveMeSomeStats.exe
+C:\Users\shawn_r\source\repos\StatisticsCalculator\GiveMeSomeStats\obj\Debug\GiveMeSomeStats.pdb
