@@ -1,0 +1,55 @@
+const SudokuVerifier = function (sudokuSchema) {
+    this.sudokuSchema = sudokuSchema;
+    this.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
+};
+
+SudokuVerifier.prototype.hasAllNumbersInSchema = function (list) {
+    return this.numbers.every((number) => {
+        return list.includes(number);
+    });
+};
+
+//Check the rows for numbers
+SudokuVerifier.prototype.checkInRows = function () {
+    return this.sudokuSchema.every((row) => {
+        return this.hasAllNumbersInSchema(row);
+    });
+};
+
+
+SudokuVerifier.prototype.checkInColumn = function (index, column) {
+    this.sudokuSchema.forEach((row) => column.push(row[index]));
+    return this.hasAllNumbersInSchema(column);
+};
+
+//Check the columns for numbers
+SudokuVerifier.prototype.checkInColumns = function () {
+    return this.sudokuSchema.every((row, index) => {
+        return this.checkInColumn(index, []);
+    });
+};
+
+
+SudokuVerifier.prototype.checkInSquare = function (square, row, column) {
+    for (let rowIndex = row; rowIndex < row + 3; rowIndex++) {
+        for (let colIndex = column; colIndex < column + 3; colIndex++) {
+            square.push(this.sudokuSchema[rowIndex][colIndex]);
+        }
+    }
+    return this.hasAllNumbersInSchema(square);
+};
+
+//Check the inner squares
+SudokuVerifier.prototype.checkInSquares = function () {
+    let squares = [];
+    for (let row = 0; row < 9; row += 3) {
+        for (let column = 0; column < 9; column += 3) {
+            squares.push(this.checkInSquare([], row, column));
+        }
+    }
+    return squares.every((square) => square);
+};
+
+SudokuVerifier.prototype.verify = function () {
+    return this.checkInRows() && this.checkInColumns() && this.checkInSquares();
+};
